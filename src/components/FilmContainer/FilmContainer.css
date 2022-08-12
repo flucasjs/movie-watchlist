@@ -1,0 +1,195 @@
+/* .flow > :where(:not(:first-child)) {
+  margin-top: 0.75em;
+} */
+
+.film-container {
+  font-family: 'Inter', sans-serif;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem;
+  grid-template-areas:
+  "poster      info"
+  "description description";
+  padding-bottom: 2rem;
+}
+
+.film-image-container {
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid black;
+  background-color: #E5E7EB;
+  grid-area: poster;
+  display: grid;
+  place-items: center;
+}
+
+.film-meta-info-container {
+  grid-area: info;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1em;
+}
+
+.film-meta-info-container > :where(:not(:first-child)) {
+  margin-top: 1em;
+}
+
+.film-meta-info-container-desktop {
+  display: none;
+}
+
+.film-description-container {
+  grid-area: description;
+}
+
+.film-description {
+  color: #6B7280;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.border-bottom:where(:not(:last-child)) {
+  width: 100%;
+  height: 2px;
+  background-color:#E5E7EB;
+  margin-bottom: 2rem;
+}
+
+.watchlist-button,
+.watchlist-button--disabled {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: clamp(100px, 25vw, 125px);
+  cursor: pointer;
+  background-color: #242424;
+  padding: 0.35em 0.2em;
+  border-radius: 20px;
+  color: #FFF;
+  font-size: 0.875rem;
+  font-weight: 400;
+  border: 2px solid transparent;
+}
+
+.watchlist-button--disabled {
+  cursor: not-allowed;
+  background-color: #565758;
+}
+
+.action-symbol {
+  font-weight: 600;
+  margin-right: 0.5em;
+}
+
+.film-title {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.film-rating {
+  font-size: 0.75em;
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+}
+
+.film-rating {
+  margin-left: 0.25em;
+}
+
+@media (min-width: 25rem) {
+  .film-meta-info-container {
+    justify-content: space-between;
+    padding-top: 1em;
+  }
+  
+  .film-meta-info-container > :where(:not(:first-child)) {
+    margin-top: unset;
+  }
+}
+
+@media (min-width: 30rem) {
+  .film-container {
+    font-family: 'Inter', sans-serif;
+    display: grid;
+    grid-template-columns: 200px repeat(auto-fit, minmax(200px, 1fr));
+    grid-row-gap: 0;
+    grid-template-areas:
+    "poster info       "
+    "poster description";
+    padding-bottom: 2rem;
+  }
+
+  .film-meta-info-container {
+    display: none;
+  }
+  
+  .film-meta-info-container-desktop {
+    display: unset;
+  }
+
+  .top-row {
+    margin-top: 1rem;
+    display: flex;
+    margin-bottom: 1rem;
+  }
+
+  .center-row {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    width: 200px;
+  }
+  
+  .film-title {
+    font-size: 1.3125rem;
+    max-width: 300px;
+    margin-right: 0.75em;
+  }
+
+  .film-rating {
+    font-size: 0.875rem;
+  }
+
+  .film-runtime {
+    margin-right: 1.5em;
+    margin-bottom: 1em;
+    font-size: 0.875rem;
+  }
+
+  .film-genre {
+    margin-right: 0;
+    margin-bottom: 1em;
+    font-size: 0.875rem;
+  }
+
+  .watchlist-button {
+    margin-bottom: 1em;
+  }
+}
+
+@media (min-width: 45rem) {
+  .film-container {
+    grid-template-columns: clamp(150px, 10vw, 200px) repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .top-row {
+    margin-top: 2rem;
+  }
+
+  .center-row {
+    width: unset;
+    flex-flow: row;
+  }
+
+  .film-runtime {
+    margin-right: 1.5em;
+  }
+
+  .film-genre {
+    margin-right: 1.5em;
+  }
+}

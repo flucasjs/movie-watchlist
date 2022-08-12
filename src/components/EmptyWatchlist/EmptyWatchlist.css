@@ -1,0 +1,74 @@
+h2,
+h3 {
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #DFDDDD;
+}
+
+h3 {
+  font-size: 0.875em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.add-container {
+  display: flex;
+  margin-top: 1em;
+  justify-self: center;
+  align-items: center;
+}
+
+.circle {
+  display: flex;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background-color: #363636;
+  font-size: 2em;
+  width: 0.75em;
+  height: 0.75em;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 4px;
+}
+
+.circle:hover {
+  border-color: #363636;
+  background-color: #FFF;
+}
+
+.circle.plus:before,
+.circle.plus:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:#FFF;
+    border-radius: 2em;
+}
+
+.circle.plus:before{
+    width: 3px;
+    margin: 6px auto;
+}
+
+.circle.plus:after{
+    height: 3px;
+    margin: auto 6px;
+}
+
+.circle:hover:before,
+.circle:hover:after {
+  background-color: #363636;
+}

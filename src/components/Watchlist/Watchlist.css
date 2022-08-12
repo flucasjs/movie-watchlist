@@ -1,0 +1,22 @@
+.search-page-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.films-container {
+  margin-inline: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 45rem) {
+  .films-container {
+    width: 700px;
+    align-self: center;
+  }
+}
