@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom"
 
 const Header = () => {
   const location = useLocation();
-  const locationHome = location.pathname === "/movie-watchlist/" || location.pathname === "/movie-watchlist";
+  const locationHome = location.pathname === "/";
 
   return (
     <header>
@@ -14,7 +14,7 @@ const Header = () => {
         <h1 className="title">
           {(locationHome) ? "Find your film" : "My Watchlist"}
         </h1>
-        <Link to={(locationHome) ? "/movie-watchlist/my-watchlist" : "/movie-watchlist/"}>
+        <Link to={(!locationHome) ? "/" : "/my-watchlist/"}>
           <motion.button 
             className={`toggle-page-button`}
             whileHover={{ scale: 1.1 }}
