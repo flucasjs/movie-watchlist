@@ -76,7 +76,7 @@ function App() {
 
       <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.key}>
-          <Route exact path="/" 
+          <Route exact path="/movie-watchlist/" 
             element={
               <Search
                 searchValue={searchValue} 
@@ -90,7 +90,7 @@ function App() {
             }
           />
             
-          <Route path="/my-watchlist/" 
+          <Route path="/movie-watchlist/my-watchlist/" 
             element={
               <Watchlist 
                 watchlist={watchlist}
