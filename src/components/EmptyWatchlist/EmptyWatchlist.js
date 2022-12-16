@@ -7,7 +7,7 @@ const EmptyWatchlist = ({togglePage}) => {
     <div className="container">
       <h2>Your watchlist is looking a little empty...</h2>
       <div className="add-container">
-        <Link to="/">
+        <Link to="/movie-watchlist/">
           <span className="circle plus"></span>
         </Link>
         <h3>Let's add some movies!</h3>
